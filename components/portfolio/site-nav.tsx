@@ -2,17 +2,12 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import { nav } from "@/data/portfolio"
 
-const navItems = [
-  { label: "Product", id: "product" },
-  { label: "Use cases", id: "use-cases" },
-  { label: "Command Center", id: "command-center" },
-  { label: "Agents", id: "agents" },
-  { label: "FAQ", id: "faq" },
-]
+const navItems = nav.map((item) => ({ label: item.label, id: item.href.replace("#", "") }))
 
-export function SideNav() {
-  const [active, setActive] = useState<string>("product")
+export function SiteNav() {
+  const [active, setActive] = useState<string>(navItems[0]?.id ?? "")
 
   useEffect(() => {
     const sections = navItems
@@ -55,10 +50,10 @@ export function SideNav() {
       <a
         href="#top"
         onClick={(event) => handleClick(event, "top")}
-        aria-label="Cofounder — back to top"
-        className="relative size-32 block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4"
+        aria-label="Shivansh Pateria — back to top"
+        className="relative size-28 block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4"
       >
-        <Image src="/sunflower.jpg" alt="" fill className="object-contain" sizes="128px" priority />
+        <Image src="/sunflower.jpg" alt="" fill className="object-contain" sizes="112px" priority />
       </a>
       <nav aria-label="Page sections" className="flex flex-col gap-0.5 text-[13px]">
         {navItems.map((item) => {
@@ -71,8 +66,8 @@ export function SideNav() {
               aria-current={isActive ? "true" : undefined}
               className={
                 isActive
-                  ? "rounded-md bg-neutral-100 px-3 py-1.5 text-black font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
-                  : "rounded-md px-3 py-1.5 text-black/50 font-normal hover:text-black hover:bg-neutral-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
+                  ? "rounded-md bg-neutral-100 px-3 py-1.5 text-black font-medium capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
+                  : "rounded-md px-3 py-1.5 text-black/50 font-normal capitalize hover:text-black hover:bg-neutral-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
               }
             >
               {item.label}

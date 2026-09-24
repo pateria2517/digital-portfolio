@@ -18,6 +18,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "anthropic-ai", allow: "/" },
       { userAgent: "Applebot-Extended", allow: "/" },
     ],
-    sitemap: "https://cofounder.app/sitemap.xml",
+    sitemap: "https://shivanshpateria.vercel.app/sitemap.xml",
   }
 }
