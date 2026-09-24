@@ -48,8 +48,6 @@ export default function Page() {
           <PixelBand
             src="/pixel-landscape.jpg"
             alt="Pixel-art landscape of sunflowers beside a calm lake and distant mountains"
-            eyebrow="Off the desk"
-            title="The focus behind the work comes from years on skates."
           />
           <Skating />
           <About />
