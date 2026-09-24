@@ -10,29 +10,52 @@ export function SiteNav() {
   const [active, setActive] = useState<string>(navItems[0]?.id ?? "")
 
   useEffect(() => {
-    const sections = navItems
-      .map((item) => document.getElementById(item.id))
-      .filter((el): el is HTMLElement => Boolean(el))
+    const getSections = () =>
+      navItems
+        .map((item) => document.getElementById(item.id))
+        .filter((el): el is HTMLElement => Boolean(el))
 
-    if (sections.length === 0) return
+    let frame = 0
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-        if (visible[0]) {
-          setActive(visible[0].target.id)
+    const update = () => {
+      frame = 0
+      const sections = getSections()
+      if (sections.length === 0) return
+
+      // Reading line: a point ~30% down the viewport.
+      const line = window.innerHeight * 0.3
+
+      // If scrolled to the very bottom, the last section is active.
+      const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2
+      if (atBottom) {
+        setActive(sections[sections.length - 1].id)
+        return
+      }
+
+      let current = sections[0].id
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= line) {
+          current = section.id
+        } else {
+          break
         }
-      },
-      {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      },
-    )
+      }
+      setActive(current)
+    }
 
-    sections.forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
+    const onScroll = () => {
+      if (frame) return
+      frame = window.requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
