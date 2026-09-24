@@ -104,31 +104,31 @@ export const currentProjects: CurrentProject[] = [
 // Tag skills as `have` (already strong) or `developing` (growing through this project).
 export const collegeProjects: CollegeProject[] = [
   {
-    title: 'StratIX live case study',
+    title: 'Sector research & live projects',
     context: 'StratIX Consulting Club',
     period: '2026 – 2027',
     status: 'ongoing',
     description:
-      'Structuring a management case for a campus client — framing the problem, benchmarking the market and shaping recommendations.',
+      'Researching the healthcare, hospitality and digital marketing sectors, and working on live client projects — mapping each industry, synthesising findings and shaping practical recommendations.',
     skills: [
-      { name: 'Case analysis', status: 'have' },
-      { name: 'Market benchmarking', status: 'have' },
-      { name: 'Financial modelling', status: 'developing' },
+      { name: 'Market research', status: 'have' },
+      { name: 'Sector analysis', status: 'developing' },
       { name: 'Consulting frameworks', status: 'developing' },
+      { name: 'Client delivery', status: 'developing' },
     ],
   },
   {
-    title: 'AceIPM content engine',
+    title: 'VA content development',
     context: 'AceIPM',
     period: '2026 – 2027',
     status: 'ongoing',
     description:
-      'Building a repeatable short-form content pipeline — scripting, editing and distribution for student aspirants.',
+      'Writing blogs and building Verbal Ability content to help AceIPM expand into the CAT preparation market — creating study material aimed at a new segment of aspirants.',
     skills: [
-      { name: 'Video production', status: 'have' },
-      { name: 'Social media marketing', status: 'have' },
+      { name: 'Blog writing', status: 'have' },
+      { name: 'Verbal ability content', status: 'have' },
       { name: 'Content strategy', status: 'developing' },
-      { name: 'Analytics & growth', status: 'developing' },
+      { name: 'Market expansion', status: 'developing' },
     ],
   },
 ]
