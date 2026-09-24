@@ -50,7 +50,7 @@ export function Projects() {
               <span className="min-w-0 flex-1">
                 <span className="block font-medium text-[15px] leading-snug text-balance">{project.title}</span>
                 <span className="mt-0.5 block text-sm text-black/55">
-                  {project.role} — {project.summary}
+                  {project.role} - {project.summary}
                 </span>
               </span>
               <Plus className="size-4 shrink-0 text-black/40 transition-transform duration-300 group-open:rotate-45" />

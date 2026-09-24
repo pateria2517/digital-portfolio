@@ -1,5 +1,5 @@
 // Single source of truth for all portfolio content.
-// Edit this file to update the site — components read from here.
+// Edit this file to update the site - components read from here.
 
 export type ProjectLink = {
   label: string
@@ -100,7 +100,7 @@ export const currentProjects: CurrentProject[] = [
   },
 ]
 
-// College projects — add each project you take up during your programme here.
+// College projects - add each project you take up during your programme here.
 // Tag skills as `have` (already strong) or `developing` (growing through this project).
 export const collegeProjects: CollegeProject[] = [
   {
@@ -109,7 +109,7 @@ export const collegeProjects: CollegeProject[] = [
     period: '2026 – 2027',
     status: 'ongoing',
     description:
-      'Researching the healthcare, hospitality and digital marketing sectors, and working on live client projects — mapping each industry, synthesising findings and shaping practical recommendations.',
+      'Researching the healthcare, hospitality and digital marketing sectors, and working on live client projects - mapping each industry, synthesising findings and shaping practical recommendations.',
     skills: [
       { name: 'Market research', status: 'have' },
       { name: 'Sector analysis', status: 'developing' },
@@ -123,7 +123,7 @@ export const collegeProjects: CollegeProject[] = [
     period: '2026 – 2027',
     status: 'ongoing',
     description:
-      'Writing blogs and building Verbal Ability content to help AceIPM expand into the CAT preparation market — creating study material aimed at a new segment of aspirants.',
+      'Writing blogs and building Verbal Ability content to help AceIPM expand into the CAT preparation market - creating study material aimed at a new segment of aspirants.',
     skills: [
       { name: 'Blog writing', status: 'have' },
       { name: 'Verbal ability content', status: 'have' },
@@ -215,7 +215,7 @@ export const recognitions: Recognition[] = [
 ]
 
 export const about =
-  "I'm an undergraduate at TAPMI Bengaluru with interests in content, marketing and fintech. My work spans research, content creation and business strategy — from analysing cases and benchmarking markets to producing multimedia and shaping campaigns. Alongside that, I compete as a national-level freestyle roller skater, which is where I picked up the discipline and focus I bring to everything else."
+  "I'm an undergraduate at TAPMI Bengaluru with interests in content, marketing and fintech. My work spans research, content creation and business strategy - from analysing cases and benchmarking markets to producing multimedia and shaping campaigns. Alongside that, I compete as a national-level freestyle roller skater, which is where I picked up the discipline and focus I bring to everything else."
 
 export const skillGroups: SkillGroup[] = [
   {

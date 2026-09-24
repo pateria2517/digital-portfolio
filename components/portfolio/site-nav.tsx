@@ -73,7 +73,7 @@ export function SiteNav() {
       <a
         href="#top"
         onClick={(event) => handleClick(event, "top")}
-        aria-label="Shivansh Pateria — back to top"
+        aria-label="Shivansh Pateria - back to top"
         className="relative size-28 block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4"
       >
         <Image src="/sunflower.jpg" alt="" fill className="object-contain" sizes="112px" priority />

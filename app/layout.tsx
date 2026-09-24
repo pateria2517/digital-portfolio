@@ -14,7 +14,7 @@ const fraunces = Fraunces({
 
 const SITE_URL = 'https://shivanshpateria.vercel.app'
 const SITE_NAME = 'Shivansh Pateria'
-const TITLE = 'Shivansh Pateria — Strategy, content & athletic discipline'
+const TITLE = 'Shivansh Pateria - Strategy, content & athletic discipline'
 const DESCRIPTION =
   'Portfolio of Shivansh Pateria, an undergraduate at TAPMI Bengaluru. Member of the StratIX consulting club, content at AceIPM, and a national-level freestyle roller skater working across strategy, content and marketing.'
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: '%s — Shivansh Pateria',
+    template: '%s - Shivansh Pateria',
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,

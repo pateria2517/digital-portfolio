@@ -15,7 +15,7 @@ export function Resume() {
               Download my CV
             </h2>
             <p className="mt-4 text-sm text-black/60 leading-relaxed">
-              A single, always up-to-date résumé generated from this site — education, experience,
+              A single, always up-to-date résumé generated from this site - education, experience,
               projects and skating are pulled straight from the content here, so it reflects the
               latest every time you download it.
             </p>

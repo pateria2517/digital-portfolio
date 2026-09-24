@@ -16,7 +16,7 @@ import {
 } from "@/data/portfolio"
 
 export const metadata: Metadata = {
-  title: `${profile.name} — Résumé`,
+  title: `${profile.name} - Résumé`,
   description: `Résumé of ${profile.name}. ${profile.headline}`,
 }
 
@@ -69,7 +69,7 @@ export default function ResumePage() {
               <li key={p.title}>
                 <div className="flex items-baseline justify-between gap-4">
                   <p className="text-sm font-medium">
-                    {p.title} <span className="font-normal text-black/55">— {p.role}, {p.org}</span>
+                    {p.title} <span className="font-normal text-black/55">- {p.role}, {p.org}</span>
                   </p>
                   <span className="shrink-0 font-mono text-xs text-black/50">{p.period}</span>
                 </div>
@@ -86,7 +86,7 @@ export default function ResumePage() {
               <li key={p.title}>
                 <div className="flex items-baseline justify-between gap-4">
                   <p className="text-sm font-medium">
-                    {p.title} <span className="font-normal text-black/55">— {p.context}</span>
+                    {p.title} <span className="font-normal text-black/55">- {p.context}</span>
                   </p>
                   <span className="shrink-0 font-mono text-xs text-black/50">{p.period}</span>
                 </div>
@@ -107,7 +107,7 @@ export default function ResumePage() {
               <li key={p.title}>
                 <div className="flex items-baseline justify-between gap-4">
                   <p className="text-sm font-medium">
-                    {p.title} <span className="font-normal text-black/55">— {p.role}</span>
+                    {p.title} <span className="font-normal text-black/55">- {p.role}</span>
                   </p>
                   <span className="shrink-0 font-mono text-xs text-black/50">{p.period}</span>
                 </div>
@@ -153,7 +153,7 @@ export default function ResumePage() {
         </div>
 
         <section className="mt-8">
-          <SectionTitle>Skating — selected results</SectionTitle>
+          <SectionTitle>Skating - selected results</SectionTitle>
           <ul className="flex flex-col gap-1.5">
             {skatingResults.map((r, i) => (
               <li key={i} className="flex gap-3 text-sm">
@@ -171,7 +171,7 @@ export default function ResumePage() {
               <li key={i} className="flex items-baseline justify-between gap-4 text-sm">
                 <span>
                   <span className="font-medium">{r.title}</span>
-                  <span className="text-black/55"> — {r.body}</span>
+                  <span className="text-black/55"> - {r.body}</span>
                 </span>
                 <span className="shrink-0 font-mono text-xs text-black/50">{r.date}</span>
               </li>
