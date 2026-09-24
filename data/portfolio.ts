@@ -24,6 +24,20 @@ export type PastProject = {
   links?: ProjectLink[]
 }
 
+export type ProjectSkill = {
+  name: string
+  status: 'have' | 'developing'
+}
+
+export type CollegeProject = {
+  title: string
+  context: string
+  period: string
+  status: 'ongoing' | 'planned' | 'completed'
+  description: string
+  skills: ProjectSkill[]
+}
+
 export type Stat = {
   value: string
   label: string
@@ -54,7 +68,7 @@ export const profile = {
   location: 'Greater Bengaluru Area, India',
   email: 'pateriashivansh@gmail.com',
   linkedin: 'https://www.linkedin.com/in/shivanshpateria-2b5a01269',
-  resume: '/resume.pdf',
+  resume: '/resume',
 }
 
 export const nav = [
@@ -62,6 +76,7 @@ export const nav = [
   { label: 'skating', href: '#skating' },
   { label: 'about', href: '#about' },
   { label: 'skills', href: '#skills' },
+  { label: 'college projects', href: '#college' },
   { label: 'resume', href: '#resume' },
   { label: 'contact', href: '#contact' },
 ]
@@ -82,6 +97,39 @@ export const currentProjects: CurrentProject[] = [
     period: 'Sept 2026 – Present',
     description:
       'Multimedia content, short-form video concepts and social distribution for student aspirants.',
+  },
+]
+
+// College projects — add each project you take up during your programme here.
+// Tag skills as `have` (already strong) or `developing` (growing through this project).
+export const collegeProjects: CollegeProject[] = [
+  {
+    title: 'StratIX live case study',
+    context: 'StratIX Consulting Club',
+    period: '2026 – 2027',
+    status: 'ongoing',
+    description:
+      'Structuring a management case for a campus client — framing the problem, benchmarking the market and shaping recommendations.',
+    skills: [
+      { name: 'Case analysis', status: 'have' },
+      { name: 'Market benchmarking', status: 'have' },
+      { name: 'Financial modelling', status: 'developing' },
+      { name: 'Consulting frameworks', status: 'developing' },
+    ],
+  },
+  {
+    title: 'AceIPM content engine',
+    context: 'AceIPM',
+    period: '2026 – 2027',
+    status: 'ongoing',
+    description:
+      'Building a repeatable short-form content pipeline — scripting, editing and distribution for student aspirants.',
+    skills: [
+      { name: 'Video production', status: 'have' },
+      { name: 'Social media marketing', status: 'have' },
+      { name: 'Content strategy', status: 'developing' },
+      { name: 'Analytics & growth', status: 'developing' },
+    ],
   },
 ]
 

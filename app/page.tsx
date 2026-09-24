@@ -4,6 +4,7 @@ import { Projects } from "@/components/portfolio/projects"
 import { Skating } from "@/components/portfolio/skating"
 import { About } from "@/components/portfolio/about"
 import { Skills } from "@/components/portfolio/skills"
+import { CollegeProjects } from "@/components/portfolio/college-projects"
 import { Resume } from "@/components/portfolio/resume"
 import { Contact } from "@/components/portfolio/contact"
 import { PixelBand } from "@/components/portfolio/pixel-band"
@@ -52,6 +53,7 @@ export default function Page() {
           <Skating />
           <About />
           <Skills />
+          <CollegeProjects />
           <Resume />
           <PixelBand
             src="/pixel-meadow.jpg"
