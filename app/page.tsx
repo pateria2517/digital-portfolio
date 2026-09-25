@@ -13,7 +13,7 @@ import { profile } from "@/data/portfolio"
 
 export default function Page() {
   return (
-    <main id="top" className="min-h-screen bg-[#F1E9D2] text-[#0A0A0A]">
+    <main id="top" className="min-h-screen bg-[#FFFFFF] text-[#0A0A0A]">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm"
@@ -21,7 +21,7 @@ export default function Page() {
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-40 bg-[#F1E9D2]/80 backdrop-blur-md border-b border-black/5">
+      <header className="sticky top-0 z-40 bg-[#FFFFFF]/80 backdrop-blur-md border-b border-black/5">
         <div className="max-w-[1280px] mx-auto px-6 flex h-16 items-center justify-between">
           <a
             href="#top"
