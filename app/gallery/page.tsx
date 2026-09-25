@@ -10,16 +10,18 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-[1280px] px-6 py-8">
+    <main className="h-dvh overflow-hidden bg-background text-foreground">
+      <div className="mx-auto flex h-full max-w-[1280px] min-h-0 flex-col px-6 py-4">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm font-medium text-black/60 transition-colors hover:text-black"
+          className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-black/60 transition-colors hover:text-black"
         >
           <ArrowLeft className="size-4" />
           Back to site
         </Link>
-        <Gallery />
+        <div className="min-h-0 flex-1">
+          <Gallery />
+        </div>
       </div>
     </main>
   )
