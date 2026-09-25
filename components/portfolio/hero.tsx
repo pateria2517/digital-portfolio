@@ -1,11 +1,10 @@
-import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { profile } from "@/data/portfolio"
 
 export function Hero() {
   return (
-    <section id="intro" className="pt-20 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center scroll-mt-20">
-      <div>
+    <section id="intro" className="pt-20 pb-24 scroll-mt-20">
+      <div className="max-w-3xl">
         <p className="text-xs uppercase tracking-[0.25em] text-black/50">{profile.eyebrow}</p>
         <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.03] font-medium tracking-tight text-balance">
           {profile.headline}
@@ -26,16 +25,6 @@ export function Hero() {
             Get in touch
           </a>
         </div>
-      </div>
-      <div className="hidden lg:block relative size-[320px] rounded-3xl overflow-hidden bg-neutral-50 border border-black/8">
-        <Image
-          src="/sunflower.jpg"
-          alt="Illustrated sunflower"
-          fill
-          className="object-contain p-6"
-          sizes="320px"
-          priority
-        />
       </div>
     </section>
   )
