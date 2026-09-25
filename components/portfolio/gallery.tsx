@@ -15,7 +15,13 @@ export function Gallery() {
       </header>
 
       <div className="min-h-0 flex-1 rounded-2xl border border-black/8 bg-white">
-        <WorksWheel items={galleryItems} label="Gallery" action="Open" className="h-full min-h-0" />
+        {galleryItems.length > 0 ? (
+          <WorksWheel items={galleryItems} label="Gallery" action="" className="h-full min-h-0" />
+        ) : (
+          <div className="grid h-full place-items-center px-6 text-center">
+            <p className="text-lg font-medium text-black/60">shall be updated soon :p</p>
+          </div>
+        )}
       </div>
     </section>
   )

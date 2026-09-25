@@ -90,53 +90,7 @@ export const nav = [
 
 // Gallery photos for projects and competitions.
 // Add new entries here as you take up more work.
-export const galleryItems: GalleryItem[] = [
-  {
-    title: 'Case sprint prep',
-    image: '/pixel-automation.jpg',
-    href: '/#college',
-  },
-  {
-    title: 'National championship floor',
-    image: '/sunflower.jpg',
-    href: '/#skating',
-  },
-  {
-    title: 'Campaign storyboard',
-    image: '/pixel-automation.png',
-    href: '/#work',
-  },
-  {
-    title: 'Practice session',
-    image: '/placeholder.jpg',
-    href: '/#skating',
-  },
-  {
-    title: 'Team discussion',
-    image: '/pixel-landscape.jpg',
-    href: '/#college',
-  },
-  {
-    title: 'Competition highlights',
-    image: '/pixel-meadow.jpg',
-    href: '/#skating',
-  },
-  {
-    title: 'Production workspace',
-    image: '/placeholder-user.jpg',
-    href: '/#work',
-  },
-  {
-    title: 'Team briefing notes',
-    image: '/pixel-landscape-night.png',
-    href: '/#college',
-  },
-  {
-    title: 'Event floor moments',
-    image: '/pixel-sky-night.png',
-    href: '/#skating',
-  },
-]
+export const galleryItems: GalleryItem[] = []
 
 export const currentProjects: CurrentProject[] = [
   {
