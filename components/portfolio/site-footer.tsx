@@ -33,7 +33,8 @@ export function SiteFooter() {
       <div className="relative max-w-[1280px] mx-auto px-6 pt-16 pb-10">
         <div className="mb-8 flex items-center gap-4">
           <div className="relative size-12 shrink-0">
-            <Image src="/sunflower.png" alt="" fill className="object-contain" sizes="48px" />
+            <Image src="/sunflower.png" alt="" fill className="object-contain dark:hidden" sizes="48px" />
+            <Image src="/bluebell.png" alt="" fill className="hidden object-contain dark:block" sizes="48px" />
           </div>
           <p className="font-serif text-xl font-medium tracking-tight">{profile.name}</p>
         </div>

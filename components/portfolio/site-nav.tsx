@@ -76,7 +76,8 @@ export function SiteNav() {
         aria-label="Shivansh Pateria - back to top"
         className="relative size-28 block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4"
       >
-        <Image src="/sunflower.png" alt="" fill className="object-contain" sizes="112px" priority />
+            <Image src="/sunflower.png" alt="" fill className="object-contain dark:hidden" sizes="112px" priority />
+            <Image src="/bluebell.png" alt="" fill className="hidden object-contain dark:block" sizes="112px" />
       </a>
       <nav aria-label="Page sections" className="flex flex-col gap-0.5 text-[13px]">
         {navItems.map((item) => {
