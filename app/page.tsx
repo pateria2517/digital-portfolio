@@ -9,7 +9,7 @@ import { Resume } from "@/components/portfolio/resume"
 import { Contact } from "@/components/portfolio/contact"
 import { PixelBand } from "@/components/portfolio/pixel-band"
 import { SiteFooter } from "@/components/portfolio/site-footer"
-import { ThemeToggle } from "@/components/portfolio/theme-toggle"
+import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher"
 import { profile } from "@/data/portfolio"
 
 export default function Page() {
@@ -31,7 +31,7 @@ export default function Page() {
             {profile.name}
           </a>
           <div className="flex items-center gap-3">
-            <ThemeToggle />
+            <LightPullThemeSwitcher />
             <a
               href="#contact"
               className="rounded-full bg-black text-white px-4 py-2 text-sm hover:bg-black/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2"
