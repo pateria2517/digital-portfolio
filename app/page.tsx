@@ -53,6 +53,8 @@ export default function Page() {
           <PixelBand
             src="/pixel-landscape.jpg"
             alt="Pixel-art landscape of sunflowers beside a calm lake and distant mountains"
+            darkSrc="/pixel-landscape-night.png"
+            darkAlt="Pixel-art night valley between rocky cliffs under a starry sky with lavender mountains"
           />
           <Skating />
           <About />
@@ -62,6 +64,8 @@ export default function Page() {
           <PixelBand
             src="/pixel-meadow.jpg"
             alt="Pixel-art meadow of wildflowers along a winding stream under a bright sky"
+            darkSrc="/pixel-sky-night.png"
+            darkAlt="Pixel-art starry night sky above soft lavender clouds"
             eyebrow="What's next"
             title="Open to internships, clubs and case competitions."
           />

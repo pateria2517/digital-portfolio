@@ -15,7 +15,7 @@ export function LightPullThemeSwitcher() {
   const toggleTheme = () => setTheme(isDark ? "light" : "dark")
 
   return (
-    <div className="relative flex h-16 w-8 items-end justify-center pb-3">
+    <div className="relative flex h-16 w-8 justify-center self-start">
       <motion.button
         type="button"
         aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
@@ -39,11 +39,11 @@ export function LightPullThemeSwitcher() {
           }
           toggleTheme()
         }}
-        className="relative size-6 cursor-grab rounded-full bg-[radial-gradient(circle_at_center,_#facc15,_#fcd34d,_#fef9c3)] shadow-[0_0_16px_6px_rgba(250,204,21,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-[radial-gradient(circle_at_center,_#4b5563,_#1f2937,_#000)] dark:shadow-[0_0_16px_4px_rgba(31,41,55,0.7)]"
+        className="absolute top-20 size-6 cursor-grab rounded-full bg-[radial-gradient(circle_at_center,_#facc15,_#fcd34d,_#fef9c3)] shadow-[0_0_16px_6px_rgba(250,204,21,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-[radial-gradient(circle_at_center,_#e5e7eb,_#9ca3af,_#4b5563)] dark:shadow-[0_0_14px_4px_rgba(203,213,225,0.35)]"
       >
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-6 left-1/2 h-[9999px] w-0.5 -translate-x-1/2 bg-neutral-300 dark:bg-neutral-600"
+          className="pointer-events-none absolute bottom-6 left-1/2 h-[9999px] w-0.5 -translate-x-1/2 bg-neutral-400 dark:bg-neutral-400"
         />
       </motion.button>
     </div>
