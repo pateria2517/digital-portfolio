@@ -1,7 +1,6 @@
 import { SiteNav } from "@/components/portfolio/site-nav"
 import { Hero } from "@/components/portfolio/hero"
 import { Projects } from "@/components/portfolio/projects"
-import { Gallery } from "@/components/portfolio/gallery"
 import { Skating } from "@/components/portfolio/skating"
 import { About } from "@/components/portfolio/about"
 import { Skills } from "@/components/portfolio/skills"
@@ -51,7 +50,6 @@ export default function Page() {
         <div id="main-content" className="min-w-0 divide-y divide-black/8">
           <Hero />
           <Projects />
-          <Gallery />
           <PixelBand
             src="/pixel-landscape.jpg"
             alt="Pixel-art landscape of sunflowers beside a calm lake and distant mountains"

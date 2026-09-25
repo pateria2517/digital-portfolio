@@ -79,7 +79,7 @@ export const profile = {
 
 export const nav = [
   { label: 'work', href: '#work' },
-  { label: 'gallery', href: '#gallery' },
+  { label: 'gallery', href: '/gallery' },
   { label: 'skating', href: '#skating' },
   { label: 'about', href: '#about' },
   { label: 'skills', href: '#skills' },
@@ -94,32 +94,47 @@ export const galleryItems: GalleryItem[] = [
   {
     title: 'Case sprint prep',
     image: '/pixel-automation.jpg',
-    href: '#college',
+    href: '/#college',
   },
   {
     title: 'National championship floor',
     image: '/sunflower.jpg',
-    href: '#skating',
+    href: '/#skating',
   },
   {
     title: 'Campaign storyboard',
     image: '/pixel-automation.png',
-    href: '#work',
+    href: '/#work',
   },
   {
     title: 'Practice session',
     image: '/placeholder.jpg',
-    href: '#skating',
+    href: '/#skating',
   },
   {
     title: 'Team discussion',
     image: '/pixel-landscape.jpg',
-    href: '#college',
+    href: '/#college',
   },
   {
     title: 'Competition highlights',
     image: '/pixel-meadow.jpg',
-    href: '#skating',
+    href: '/#skating',
+  },
+  {
+    title: 'Production workspace',
+    image: '/placeholder-user.jpg',
+    href: '/#work',
+  },
+  {
+    title: 'Team briefing notes',
+    image: '/pixel-landscape-night.png',
+    href: '/#college',
+  },
+  {
+    title: 'Event floor moments',
+    image: '/pixel-sky-night.png',
+    href: '/#skating',
   },
 ]
 
