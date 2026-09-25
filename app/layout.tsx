@@ -79,8 +79,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F1E9D2' },
-    { media: '(prefers-color-scheme: dark)', color: '#F1E9D2' },
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#FFFFFF' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -119,14 +119,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${fraunces.variable} bg-[#F1E9D2]`}>
+    <html lang="en" className={`${geist.variable} ${fraunces.variable} bg-[#FFFFFF]`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#F1E9D2] text-[#0A0A0A]">
+      <body className="font-sans antialiased bg-[#FFFFFF] text-[#0A0A0A]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
