@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Fraunces } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const geist = Geist({
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/sunflower.jpg',
+    icon: '/sunflower.png',
     apple: '/sunflower.jpg',
   },
 }
@@ -119,15 +120,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${fraunces.variable} bg-[#FFFFFF]`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geist.variable} ${fraunces.variable} bg-background`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#FFFFFF] text-[#0A0A0A]">
-        {children}
+      <body className="font-sans antialiased bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

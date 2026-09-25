@@ -30,7 +30,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export default function ResumePage() {
   return (
-    <main className="min-h-screen bg-neutral-100 py-10 text-[#0A0A0A] print:bg-white print:py-0">
+    <main className="min-h-screen bg-neutral-100 py-10 text-black print:bg-white print:py-0">
       <div className="mx-auto flex max-w-[800px] items-center justify-between px-6 pb-6 print:hidden">
         <Link
           href="/"

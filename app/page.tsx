@@ -9,11 +9,12 @@ import { Resume } from "@/components/portfolio/resume"
 import { Contact } from "@/components/portfolio/contact"
 import { PixelBand } from "@/components/portfolio/pixel-band"
 import { SiteFooter } from "@/components/portfolio/site-footer"
+import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher"
 import { profile } from "@/data/portfolio"
 
 export default function Page() {
   return (
-    <main id="top" className="min-h-screen bg-[#FFFFFF] text-[#0A0A0A]">
+    <main id="top" className="min-h-screen bg-background text-foreground">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm"
@@ -21,7 +22,7 @@ export default function Page() {
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-40 bg-[#FFFFFF]/80 backdrop-blur-md border-b border-black/5">
+      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-black/5">
         <div className="max-w-[1280px] mx-auto px-6 flex h-16 items-center justify-between">
           <a
             href="#top"
@@ -29,12 +30,15 @@ export default function Page() {
           >
             {profile.name}
           </a>
-          <a
-            href="#contact"
-            className="rounded-full bg-black text-white px-4 py-2 text-sm hover:bg-black/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2"
-          >
-            Get in touch
-          </a>
+          <div className="flex items-center gap-3">
+            <LightPullThemeSwitcher />
+            <a
+              href="#contact"
+              className="rounded-full bg-black text-white px-4 py-2 text-sm hover:bg-black/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2"
+            >
+              Get in touch
+            </a>
+          </div>
         </div>
       </header>
 

@@ -105,6 +105,27 @@ html {
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+/* Components use black/white/neutral utilities directly, so dark mode
+   inverts those palette tokens instead of rewriting every class. */
+@media screen {
+  .dark {
+    color-scheme: dark;
+    --color-black: oklch(0.97 0 0);
+    --color-white: oklch(0.145 0 0);
+    --color-neutral-50: oklch(0.19 0 0);
+    --color-neutral-100: oklch(0.23 0 0);
+    --color-neutral-200: oklch(0.28 0 0);
+    --color-neutral-300: oklch(0.34 0 0);
+    --color-neutral-400: oklch(0.44 0 0);
+    --color-neutral-500: oklch(0.556 0 0);
+    --color-neutral-600: oklch(0.708 0 0);
+    --color-neutral-700: oklch(0.8 0 0);
+    --color-neutral-800: oklch(0.87 0 0);
+    --color-neutral-900: oklch(0.922 0 0);
+    --color-neutral-950: oklch(0.97 0 0);
+  }
+}
+
 @theme inline {
   --font-sans: var(--font-geist), 'Geist', 'Geist Fallback';
   --font-serif: var(--font-fraunces), 'Fraunces', serif;
