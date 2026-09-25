@@ -54,6 +54,12 @@ export type Recognition = {
   date: string
 }
 
+export type GalleryItem = {
+  title: string
+  image: string
+  href?: string
+}
+
 export type SkillGroup = {
   title: string
   items: string[]
@@ -73,6 +79,7 @@ export const profile = {
 
 export const nav = [
   { label: 'work', href: '#work' },
+  { label: 'gallery', href: '/gallery' },
   { label: 'skating', href: '#skating' },
   { label: 'about', href: '#about' },
   { label: 'skills', href: '#skills' },
@@ -80,6 +87,10 @@ export const nav = [
   { label: 'resume', href: '#resume' },
   { label: 'contact', href: '#contact' },
 ]
+
+// Gallery photos for projects and competitions.
+// Add new entries here as you take up more work.
+export const galleryItems: GalleryItem[] = []
 
 export const currentProjects: CurrentProject[] = [
   {

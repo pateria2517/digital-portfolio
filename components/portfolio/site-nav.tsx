@@ -4,7 +4,11 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { nav } from "@/data/portfolio"
 
-const navItems = nav.map((item) => ({ label: item.label, id: item.href.replace("#", "") }))
+const navItems = nav.map((item) => ({
+  label: item.label,
+  href: item.href,
+  id: item.href.startsWith("#") ? item.href.replace("#", "") : "",
+}))
 
 export function SiteNav() {
   const [active, setActive] = useState<string>(navItems[0]?.id ?? "")
@@ -12,6 +16,7 @@ export function SiteNav() {
   useEffect(() => {
     const getSections = () =>
       navItems
+        .filter((item) => item.id)
         .map((item) => document.getElementById(item.id))
         .filter((el): el is HTMLElement => Boolean(el))
 
@@ -58,7 +63,8 @@ export function SiteNav() {
     }
   }, [])
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string, id: string) => {
+    if (!href.startsWith("#")) return
     event.preventDefault()
     const target = id === "top" ? document.body : document.getElementById(id)
     if (!target) return
@@ -72,7 +78,7 @@ export function SiteNav() {
     <div className="sticky top-24 flex flex-col gap-10">
       <a
         href="#top"
-        onClick={(event) => handleClick(event, "top")}
+        onClick={(event) => handleClick(event, "#top", "top")}
         aria-label="Shivansh Pateria - back to top"
         className="relative size-28 block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4"
       >
@@ -84,9 +90,9 @@ export function SiteNav() {
           const isActive = active === item.id
           return (
             <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(event) => handleClick(event, item.id)}
+              key={item.href}
+              href={item.href}
+              onClick={(event) => handleClick(event, item.href, item.id)}
               aria-current={isActive ? "true" : undefined}
               className={
                 isActive
