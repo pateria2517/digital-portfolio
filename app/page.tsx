@@ -10,6 +10,7 @@ import { Contact } from "@/components/portfolio/contact"
 import { PixelBand } from "@/components/portfolio/pixel-band"
 import { SiteFooter } from "@/components/portfolio/site-footer"
 import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher"
+import { LiveContent } from "@/components/portfolio/live-content"
 import { profile } from "@/data/portfolio"
 
 export default function Page() {
@@ -69,6 +70,7 @@ export default function Page() {
             eyebrow="What's next"
             title="Open to internships, clubs and case competitions."
           />
+          <LiveContent />
           <Contact />
         </div>
       </div>
