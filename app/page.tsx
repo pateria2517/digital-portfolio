@@ -11,6 +11,8 @@ import { PixelBand } from "@/components/portfolio/pixel-band"
 import { SiteFooter } from "@/components/portfolio/site-footer"
 import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher"
 import { LiveContent } from "@/components/portfolio/live-content"
+
+export const dynamic = "force-dynamic"
 import { profile } from "@/data/portfolio"
 
 export default function Page() {
