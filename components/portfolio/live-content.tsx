@@ -9,14 +9,23 @@ const labels: Record<string, string> = {
 }
 
 export async function LiveContent() {
-  const supabase = await createClient()
-  const { data } = await supabase
-    .from("portfolio_content")
-    .select("id, section, title, body, image_url, link_url, sort_order")
-    .order("section")
-    .order("sort_order")
+  try {
+    const supabase = await createClient()
+    const { data, error } = await supabase
+      .from("portfolio_content")
+      .select("id, section, title, body, image_url, link_url, sort_order")
+      .order("section")
+      .order("sort_order")
 
-  if (!data?.length) return null
+    if (error || !data?.length) return null
+
+    return <LiveContentList data={data} />
+  } catch {
+    return null
+  }
+}
+
+function LiveContentList({ data }: { data: Array<{ id: string; section: string; title: string; body: string; image_url: string | null; link_url: string | null; sort_order: number }> }) {
 
   return (
     <section className="space-y-16 py-16" aria-label="Added portfolio content">
