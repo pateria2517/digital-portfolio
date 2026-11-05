@@ -1,5 +1,6 @@
 import { Sparkles, Wrench } from "lucide-react"
 import { collegeProjects } from "@/data/portfolio"
+import { getPortfolioEntries } from "@/lib/portfolio-content"
 
 const statusStyles: Record<string, string> = {
   ongoing: "bg-emerald-500",
@@ -13,7 +14,10 @@ const statusLabels: Record<string, string> = {
   completed: "Completed",
 }
 
-export function CollegeProjects() {
+export async function CollegeProjects() {
+  const liveProjects = await getPortfolioEntries("projects")
+  const projects = [...collegeProjects, ...liveProjects.map((entry) => ({ title: entry.title, status: "ongoing" as const, period: "Added", context: "Portfolio project", description: entry.body, skills: [...(entry.metadata?.skillsHave ?? []).map((name) => ({ name, status: "have" as const })), ...(entry.metadata?.skillsDeveloping ?? []).map((name) => ({ name, status: "developing" as const }))] }))]
+
   return (
     <section id="college" aria-labelledby="college-heading" className="py-16 scroll-mt-20">
       <header className="mb-8 max-w-2xl">

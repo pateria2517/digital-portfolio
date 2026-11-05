@@ -1,6 +1,11 @@
 import { skillGroups } from "@/data/portfolio"
+import { getPortfolioEntries } from "@/lib/portfolio-content"
 
-export function Skills() {
+export async function Skills() {
+  const [projectEntries, skillEntries] = await Promise.all([getPortfolioEntries("projects"), getPortfolioEntries("skills")])
+  const addedSkills = [...skillEntries.map((entry) => entry.title), ...projectEntries.flatMap((entry) => [...(entry.metadata?.skillsHave ?? []), ...(entry.metadata?.skillsDeveloping ?? [])])].filter((skill, index, all) => skill && all.indexOf(skill) === index)
+  const groups = addedSkills.length ? [...skillGroups, { title: "Added skills", items: addedSkills }] : skillGroups
+
   return (
     <section id="skills" aria-labelledby="skills-heading" className="py-16 scroll-mt-20">
       <header className="mb-8">
@@ -14,7 +19,7 @@ export function Skills() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {skillGroups.map((group) => (
+        {groups.map((group) => (
           <div key={group.title} className="rounded-2xl border border-black/8 bg-white p-6">
             <h3 className="font-serif text-xl font-medium tracking-tight">{group.title}</h3>
             <ul className="mt-4 flex flex-col gap-2.5">

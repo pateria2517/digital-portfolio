@@ -55,7 +55,6 @@ export default function Page() {
         <div id="main-content" className="min-w-0 divide-y divide-black/8">
           <Hero />
           <Projects />
-          <LiveContent section="projects" />
           <PixelBand
             src="/pixel-landscape.jpg"
             alt="Pixel-art landscape of sunflowers beside a calm lake and distant mountains"
@@ -65,7 +64,6 @@ export default function Page() {
           <Skating />
           <About />
           <Skills />
-          <LiveContent section="skills" />
           <CollegeProjects />
           <Resume />
           <PixelBand
