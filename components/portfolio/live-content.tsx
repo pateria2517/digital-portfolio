@@ -9,7 +9,7 @@ const labels: Record<string, string> = {
   skills: "Skills",
 }
 
-export async function LiveContent() {
+export async function LiveContent({ section }: { section?: string }) {
   try {
     const supabase = await createClient()
     const { data, error } = await supabase
@@ -20,7 +20,8 @@ export async function LiveContent() {
 
     if (error || !data?.length) return null
 
-    return <LiveContentList data={data} />
+    const visibleData = section ? data.filter((entry) => entry.section === section) : data
+    return visibleData.length ? <LiveContentList data={visibleData} /> : null
   } catch {
     return null
   }
