@@ -1,5 +1,3 @@
-import { createClient } from "@/lib/supabase/server"
-
 export type PortfolioEntry = {
   id: string
   section: string
@@ -13,14 +11,13 @@ export type PortfolioEntry = {
 
 export async function getPortfolioEntries(section: string): Promise<PortfolioEntry[]> {
   try {
-    const supabase = await createClient()
-    const { data, error } = await supabase
-      .from("portfolio_content")
-      .select("id, section, title, body, image_url, link_url, sort_order, metadata")
-      .eq("section", section)
-      .order("sort_order")
-    if (error) return []
-    return (data ?? []) as PortfolioEntry[]
+    const url = new URL(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/portfolio_content`)
+    url.searchParams.set("select", "id,section,title,body,image_url,link_url,sort_order,metadata")
+    url.searchParams.set("section", `eq.${section}`)
+    url.searchParams.set("order", "sort_order.asc")
+    const response = await fetch(url, { headers: { apikey: process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "" }, cache: "no-store" })
+    if (!response.ok) return []
+    return (await response.json()) as PortfolioEntry[]
   } catch {
     return []
   }

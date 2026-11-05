@@ -46,7 +46,7 @@ export async function CollegeProjects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {collegeProjects.map((project) => (
+        {projects.map((project) => (
           <article
             key={project.title}
             className="group flex flex-col rounded-2xl border border-black/8 bg-white p-6 transition-all duration-300 hover:border-black/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
