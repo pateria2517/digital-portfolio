@@ -12,8 +12,10 @@ import { SiteFooter } from "@/components/portfolio/site-footer"
 import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher"
 import { LiveContent } from "@/components/portfolio/live-content"
 
-export const dynamic = "force-dynamic"
 import { profile } from "@/data/portfolio"
+
+export const dynamic = "force-dynamic"
+export const revalidate = 0
 
 export default function Page() {
   return (
