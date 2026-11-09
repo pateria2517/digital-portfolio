@@ -1,4 +1,4 @@
-import { Sparkles, Wrench } from "lucide-react"
+import { ArrowUpRight, Sparkles, Wrench } from "lucide-react"
 import { collegeProjects } from "@/data/portfolio"
 import { getPortfolioEntries } from "@/lib/portfolio-content"
 
@@ -16,7 +16,7 @@ const statusLabels: Record<string, string> = {
 
 export async function CollegeProjects() {
   const liveProjects = await getPortfolioEntries("projects")
-  const projects = [...collegeProjects, ...liveProjects.map((entry) => ({ title: entry.title, status: "ongoing" as const, period: "Added", context: "Portfolio project", description: entry.body, skills: [...(entry.metadata?.skillsHave ?? []).map((name) => ({ name, status: "have" as const })), ...(entry.metadata?.skillsDeveloping ?? []).map((name) => ({ name, status: "developing" as const }))] }))]
+  const projects = [...collegeProjects, ...liveProjects.map((entry) => ({ title: entry.title, status: "ongoing" as const, period: "Added", context: "Portfolio project", description: entry.body, link_url: entry.link_url, skills: [...(entry.metadata?.skillsHave ?? []).map((name) => ({ name, status: "have" as const })), ...(entry.metadata?.skillsDeveloping ?? []).map((name) => ({ name, status: "developing" as const }))] }))]
 
   return (
     <section id="college" aria-labelledby="college-heading" className="py-16 scroll-mt-20">
@@ -62,6 +62,7 @@ export async function CollegeProjects() {
             <h3 className="mt-5 font-serif text-2xl font-medium tracking-tight text-balance">{project.title}</h3>
             <p className="mt-1.5 text-sm font-medium text-black/70">{project.context}</p>
             <p className="mt-4 text-sm text-black/60 leading-relaxed">{project.description}</p>
+            {'link_url' in project && typeof project.link_url === 'string' && project.link_url ? <a href={project.link_url} target="_blank" rel="noreferrer" className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-medium underline underline-offset-4">Open project <ArrowUpRight className="size-3.5" aria-hidden="true" /></a> : null}
 
             <div className="mt-6 flex flex-wrap gap-2 pt-5 border-t border-black/8">
               {project.skills.map((skill) => (
