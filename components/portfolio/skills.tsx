@@ -1,6 +1,12 @@
 import { skillGroups } from "@/data/portfolio"
+import { getPortfolioEntries } from "@/lib/portfolio-content"
 
-export function Skills() {
+export async function Skills() {
+  const entries = await getPortfolioEntries("skills")
+  const groups = entries.length
+    ? entries.map((entry) => ({ title: entry.title, items: entry.metadata?.items ?? [] }))
+    : skillGroups
+
   return (
     <section id="skills" aria-labelledby="skills-heading" className="py-16 scroll-mt-20">
       <header className="mb-8">
@@ -13,9 +19,9 @@ export function Skills() {
         </h2>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {skillGroups.map((group) => (
-          <div key={group.title} className="rounded-2xl border border-black/8 bg-white p-6">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {groups.map((group) => (
+          <article key={group.title} className="rounded-2xl border border-black/8 bg-white p-6">
             <h3 className="font-serif text-xl font-medium tracking-tight">{group.title}</h3>
             <ul className="mt-4 flex flex-col gap-2.5">
               {group.items.map((item) => (
@@ -25,7 +31,7 @@ export function Skills() {
                 </li>
               ))}
             </ul>
-          </div>
+          </article>
         ))}
       </div>
     </section>

@@ -1,5 +1,4 @@
 import { SiteNav } from "@/components/portfolio/site-nav"
-import { Hero } from "@/components/portfolio/hero"
 import { Projects } from "@/components/portfolio/projects"
 import { Skating } from "@/components/portfolio/skating"
 import { About } from "@/components/portfolio/about"
@@ -10,7 +9,12 @@ import { Contact } from "@/components/portfolio/contact"
 import { PixelBand } from "@/components/portfolio/pixel-band"
 import { SiteFooter } from "@/components/portfolio/site-footer"
 import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher"
+import { LiveContent } from "@/components/portfolio/live-content"
+
 import { profile } from "@/data/portfolio"
+
+export const dynamic = "force-dynamic"
+export const revalidate = 0
 
 export default function Page() {
   return (
@@ -48,7 +52,7 @@ export default function Page() {
         </aside>
 
         <div id="main-content" className="min-w-0 divide-y divide-black/8">
-          <Hero />
+          <About />
           <Projects />
           <PixelBand
             src="/pixel-landscape.jpg"
@@ -57,7 +61,6 @@ export default function Page() {
             darkAlt="Pixel-art night valley between rocky cliffs under a starry sky with lavender mountains"
           />
           <Skating />
-          <About />
           <Skills />
           <CollegeProjects />
           <Resume />
@@ -69,6 +72,9 @@ export default function Page() {
             eyebrow="What's next"
             title="Open to internships, clubs and case competitions."
           />
+          <LiveContent section="recognitions" />
+          <LiveContent section="awards" />
+          <LiveContent section="images" limit={2} />
           <Contact />
         </div>
       </div>
