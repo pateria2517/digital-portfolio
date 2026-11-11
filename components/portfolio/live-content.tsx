@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
+import Link from "next/link"
 import { PortfolioCarousel } from "@/components/ui/portfolio-carousel"
 
 const labels: Record<string, string> = {
@@ -9,7 +10,7 @@ const labels: Record<string, string> = {
   skills: "Skills",
 }
 
-export async function LiveContent({ section }: { section?: string }) {
+export async function LiveContent({ section, limit }: { section?: string; limit?: number }) {
   try {
     const supabase = await createClient()
     const { data, error } = await supabase
@@ -21,7 +22,8 @@ export async function LiveContent({ section }: { section?: string }) {
     if (error || !data?.length) return null
 
     const visibleData = section ? data.filter((entry) => entry.section === section) : data
-    return visibleData.length ? <LiveContentList data={visibleData} /> : null
+    const limitedData = typeof limit === "number" ? visibleData.slice(0, limit) : visibleData
+    return limitedData.length ? <LiveContentList data={limitedData} showGalleryMore={section === "images" && typeof limit === "number"} /> : null
   } catch {
     return null
   }
@@ -38,7 +40,7 @@ function PortfolioEntry({ entry, section }: { entry: PortfolioEntryData; section
   </article>
 }
 
-function LiveContentList({ data }: { data: PortfolioEntryData[] }) {
+function LiveContentList({ data, showGalleryMore = false }: { data: PortfolioEntryData[]; showGalleryMore?: boolean }) {
 
   return (
     <section className="space-y-16 py-16" aria-label="Added portfolio content">
@@ -49,9 +51,12 @@ function LiveContentList({ data }: { data: PortfolioEntryData[] }) {
           <div key={section} id={section}>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{labels[section]}</p>
             {section === "images" ? (
-              <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                {entries.map((entry) => <PortfolioEntry key={entry.id} entry={entry} section={section} />)}
-              </div>
+              <>
+                <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                  {entries.map((entry) => <PortfolioEntry key={entry.id} entry={entry} section={section} />)}
+                </div>
+                {showGalleryMore ? <div className="mt-6 flex justify-end"><Link href="/gallery" className="inline-flex items-center rounded-full border border-black/15 px-5 py-2 text-sm font-medium transition-colors hover:bg-black hover:text-white">More</Link></div> : null}
+              </>
             ) : (
               <div className="mt-6">
                 <PortfolioCarousel label={labels[section]}>

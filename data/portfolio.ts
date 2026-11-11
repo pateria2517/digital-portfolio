@@ -80,11 +80,11 @@ export const profile = {
 export const nav = [
   { label: 'about', href: '#about' },
   { label: 'work', href: '#work' },
-  { label: 'gallery', href: '/gallery' },
   { label: 'skating', href: '#skating' },
   { label: 'skills', href: '#skills' },
   { label: 'college projects', href: '#college' },
   { label: 'resume', href: '#resume' },
+  { label: 'gallery', href: '/gallery' },
   { label: 'contact', href: '#contact' },
 ]
 

@@ -74,7 +74,7 @@ export default function Page() {
           />
           <LiveContent section="recognitions" />
           <LiveContent section="awards" />
-          <LiveContent section="images" />
+          <LiveContent section="images" limit={2} />
           <Contact />
         </div>
       </div>
