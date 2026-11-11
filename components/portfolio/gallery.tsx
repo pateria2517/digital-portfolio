@@ -1,7 +1,11 @@
 import { WorksWheel } from "@/components/ui/works-wheel"
-import { galleryItems } from "@/data/portfolio"
+import { getPortfolioEntries } from "@/lib/portfolio-content"
 
-export function Gallery() {
+export async function Gallery() {
+  const galleryItems = (await getPortfolioEntries("images"))
+    .filter((entry) => entry.image_url)
+    .map((entry) => ({ title: entry.title, image: entry.image_url!, href: entry.link_url ?? undefined }))
+
   return (
     <section id="gallery" aria-labelledby="gallery-heading" className="flex h-full min-h-0 flex-col py-4">
       <header className="mb-4 max-w-2xl">
@@ -17,11 +21,7 @@ export function Gallery() {
       <div className="min-h-0 flex-1 rounded-2xl border border-black/8 bg-white">
         {galleryItems.length > 0 ? (
           <WorksWheel items={galleryItems} label="Gallery" action="" className="h-full min-h-0" />
-        ) : (
-          <div className="grid h-full place-items-center px-6 text-center">
-            <p className="text-lg font-medium text-black/60">shall be updated soon :p</p>
-          </div>
-        )}
+        ) : null}
       </div>
     </section>
   )
