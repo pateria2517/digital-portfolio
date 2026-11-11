@@ -6,7 +6,7 @@ export type PortfolioEntry = {
   image_url: string | null
   link_url: string | null
   sort_order: number
-  metadata: { skillsHave?: string[]; skillsDeveloping?: string[] }
+  metadata: { skillsHave?: string[]; skillsDeveloping?: string[]; items?: string[] }
 }
 
 export async function getPortfolioEntries(section: string): Promise<PortfolioEntry[]> {
