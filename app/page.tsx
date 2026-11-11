@@ -1,5 +1,4 @@
 import { SiteNav } from "@/components/portfolio/site-nav"
-import { Hero } from "@/components/portfolio/hero"
 import { Projects } from "@/components/portfolio/projects"
 import { Skating } from "@/components/portfolio/skating"
 import { About } from "@/components/portfolio/about"
@@ -53,7 +52,7 @@ export default function Page() {
         </aside>
 
         <div id="main-content" className="min-w-0 divide-y divide-black/8">
-          <Hero />
+          <About />
           <Projects />
           <PixelBand
             src="/pixel-landscape.jpg"
@@ -62,7 +61,6 @@ export default function Page() {
             darkAlt="Pixel-art night valley between rocky cliffs under a starry sky with lavender mountains"
           />
           <Skating />
-          <About />
           <Skills />
           <CollegeProjects />
           <Resume />
